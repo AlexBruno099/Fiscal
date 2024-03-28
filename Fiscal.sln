@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiscal", "Fiscal\Fiscal.csproj", "{B190A63C-EB6E-4A45-B6D0-D8C026BEE40E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B460C3D-D0ED-427B-B69A-99220EE0F186}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B190A63C-EB6E-4A45-B6D0-D8C026BEE40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B190A63C-EB6E-4A45-B6D0-D8C026BEE40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B190A63C-EB6E-4A45-B6D0-D8C026BEE40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B190A63C-EB6E-4A45-B6D0-D8C026BEE40E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A690D30C-3D58-46CF-91CF-6B2487C26BFA}
+	EndGlobalSection
+EndGlobal
