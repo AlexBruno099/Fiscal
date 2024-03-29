@@ -4,10 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq.Expressions;
+using static Fiscal.Classe.DataContext;
+using Fiscal;
 
 namespace Fiscal
 {
@@ -23,9 +27,6 @@ namespace Fiscal
                 DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
             }
         }
-        public Configurações()
-        {
-            InitializeComponent();
-        }
+
     }
 }

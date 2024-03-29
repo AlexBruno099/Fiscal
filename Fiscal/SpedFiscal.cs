@@ -31,39 +31,24 @@ namespace Fiscal
         public SpedFiscal()
         {
             InitializeComponent();
+
         }
 
-        private void BtnConfirmar_Click(object sender, EventArgs e)
+        public void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            Bloc blocosSped = new BlocosSped();
-            blocosSped.sped = this;
-            string registro = blocosSped.reg();
+            Registro000 registro000 = new Registro000();
+            
+                registro000.BlocosSped();
 
-            string registro00 = registro;
+            
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            
+            //blocosSped.sped = this;
+            //string registro = blocosSped.reg();
 
-            saveFileDialog.Filter = "Arquivo de testo (*.txt)|.txt";
-            saveFileDialog.Title = "Salvar Arquivo SPED";
-            saveFileDialog.FileName = "SPED" + DateTime.Now.ToString("yyyyMMdd");
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK);
-            {
-                string caminhoArquivo = saveFileDialog.FileName;
-                try
-                {
 
-                    File.WriteAllText(caminhoArquivo, registro00);
 
-                    MessageBox.Show("SPED gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocorreu um erro ao gerar o arquivo SPED:" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Fiscal
         public string OBS { get; set; }
 
         [DisplayName("Telefone")]
-        public int Telefone { get; set; }
+        public string Telefone { get; set; }
 
         [DisplayName("Celular")]
         public string Celular { get; set; }
@@ -83,7 +83,7 @@ namespace Fiscal
         public string Pais { get; set; }
 
         [DisplayName("Número")]
-        public string NumeroEm { get; set; }
+        public string Numero { get; set; }
 
         [DisplayName("Código ICMS")]
         public int? CodIcms { get; set; }
@@ -104,7 +104,7 @@ namespace Fiscal
         public string SerieECF { get; set; }
 
         [DisplayName("Modelo ECF")]
-        public int ModeloECF { get; set; }
+        public string ModeloECF { get; set; }
 
         [DisplayName("Tipo ECF")]
         public string TipoECF { get; set; }
@@ -207,7 +207,7 @@ namespace Fiscal
         public string MD5PAF { get; set; }
 
         [DisplayName("Percentual de ICMS")]
-        public int? PercICMS { get; set; }
+        public decimal? PercICMS { get; set; }
 
         [DisplayName("OC")]
         public string OC { get; set; }
@@ -234,7 +234,7 @@ namespace Fiscal
         public string MD5CAD { get; set; }
 
         [DisplayName("Atualizar Data Venda Compra")]
-        public DateTime? AtualizarDataVendaCompra { get; set; }
+        public string AtualizarDataVendaCompra { get; set; }
 
         [DisplayName("Reservar Produto Aluguel Condi")]
         public string ReservarProdutoAluguelCondi {  get; set; }
@@ -321,7 +321,7 @@ namespace Fiscal
 
             builder.Property(e => e.Pais).HasColumnName("PAIS");
 
-            builder.Property(e => e.NumeroEm).HasColumnName("NUMERO");
+            builder.Property(e => e.Numero).HasColumnName("NUMERO");
 
             builder.Property(e => e.CodIcms).HasColumnName("CODICMS");
 
@@ -335,7 +335,7 @@ namespace Fiscal
 
             builder.Property(e => e.Suframa).HasColumnName("SUFRAMA");
 
-            builder.Property(e => e.SerieECF).HasColumnName("NUMERO");
+            builder.Property(e => e.SerieECF).HasColumnName("SERIEECF");
 
             builder.Property(e => e.ModeloECF).HasColumnName("MODELOECF");
 
@@ -413,7 +413,7 @@ namespace Fiscal
 
             builder.Property(e => e.NumeroCredenciamento).HasColumnName("NUMEROCREDENCIAMENTO");
 
-            builder.Property(e => e.PossuiIESubistituto).HasColumnName("POSSUIIESUBISTITUTO");
+            builder.Property(e => e.PossuiIESubistituto).HasColumnName("POSSUIIESUBSTITUTO");
 
             builder.Property(e => e.AtualizarEstoque).HasColumnName("ATUALIZARESTOQUE");
 
@@ -425,7 +425,7 @@ namespace Fiscal
 
             builder.Property(e => e.AtualizarDataVendaCompra).HasColumnName("ATUALIZARDATAVENDACOMPRA");
 
-            builder.Property(c => c.ReservarProdutoAluguelCondi).HasColumnName("RESERVARPRODUTOALUGUELCONDI");
+            builder.Property(c => c.ReservarProdutoAluguelCondi).HasColumnName("RESERVARPRODALUGUELCONDI");
 
             builder.Property(c => c.AtualizarEstoqueParcial).HasColumnName("ATUALIZARESTOQUEPARCIAL");
 
