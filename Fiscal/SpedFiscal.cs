@@ -15,7 +15,7 @@ using Fiscal;
 
 namespace Fiscal 
 {
-    public partial class SpedFiscal : Form 
+    public partial class SpedFiscal : Form
     {
         [DllImport("DwmApi")]
         private static extern int DwmSetWindowAttribute(IntPtr hwn, int attr, int[] attrValue, int attriSize);
@@ -37,17 +37,9 @@ namespace Fiscal
         public void BtnConfirmar_Click(object sender, EventArgs e)
         {
             Registro000 registro000 = new Registro000();
-            
-                registro000.BlocosSped();
 
-            
-
-            
-            //blocosSped.sped = this;
-            //string registro = blocosSped.reg();
-
-
-
+            registro000.spedFiscal = this;
+            registro000.BlocosSped();
 
         }
     }

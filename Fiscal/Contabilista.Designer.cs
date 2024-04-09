@@ -29,6 +29,7 @@ namespace Fiscal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contabilista));
             groupBox1 = new GroupBox();
             CodContAnaText = new TextBox();
             label14 = new Label();
@@ -358,6 +359,7 @@ namespace Fiscal
             ClientSize = new Size(491, 493);
             Controls.Add(button1);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Contabilista";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dados do Contabilista";

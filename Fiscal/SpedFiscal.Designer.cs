@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpedFiscal));
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             groupBox7 = new GroupBox();
@@ -56,21 +57,21 @@
             checkBox3 = new CheckBox();
             checkBox2 = new CheckBox();
             groupBox5 = new GroupBox();
-            textBox1 = new TextBox();
+            textLeiaute = new TextBox();
             groupBox4 = new GroupBox();
             radioButton6 = new RadioButton();
             radioButton7 = new RadioButton();
             groupBox3 = new GroupBox();
-            radioButton5 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
+            btnPerfC = new RadioButton();
+            btnPerfB = new RadioButton();
+            btnPerfA = new RadioButton();
             groupBox2 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            ArqSubs = new RadioButton();
+            ArqOrig = new RadioButton();
             groupBox1 = new GroupBox();
-            dateTimePicker2 = new DateTimePicker();
+            DataTimeFin = new DateTimePicker();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            DataTimeIni = new DateTimePicker();
             label1 = new Label();
             BtnConfirmar = new Button();
             tabControl1.SuspendLayout();
@@ -207,9 +208,12 @@
             // 
             // checkBox1
             // 
+            checkBox1.AutoCheck = false;
             checkBox1.AutoSize = true;
+            checkBox1.CausesValidation = false;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Enabled = false;
             checkBox1.Location = new Point(12, 22);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(192, 19);
@@ -369,9 +373,12 @@
             // 
             // checkBox2
             // 
+            checkBox2.AutoCheck = false;
             checkBox2.AutoSize = true;
+            checkBox2.CausesValidation = false;
             checkBox2.Checked = true;
             checkBox2.CheckState = CheckState.Checked;
+            checkBox2.Enabled = false;
             checkBox2.Location = new Point(12, 39);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(144, 19);
@@ -381,7 +388,7 @@
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(textBox1);
+            groupBox5.Controls.Add(textLeiaute);
             groupBox5.Location = new Point(342, 119);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(134, 68);
@@ -389,13 +396,13 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Perfil de geração";
             // 
-            // textBox1
+            // textLeiaute
             // 
-            textBox1.Location = new Point(6, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(122, 23);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "018";
+            textLeiaute.Location = new Point(6, 22);
+            textLeiaute.Name = "textLeiaute";
+            textLeiaute.Size = new Size(122, 23);
+            textLeiaute.TabIndex = 0;
+            textLeiaute.Text = "018";
             // 
             // groupBox4
             // 
@@ -433,9 +440,9 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radioButton5);
-            groupBox3.Controls.Add(radioButton4);
-            groupBox3.Controls.Add(radioButton3);
+            groupBox3.Controls.Add(btnPerfC);
+            groupBox3.Controls.Add(btnPerfB);
+            groupBox3.Controls.Add(btnPerfA);
             groupBox3.Location = new Point(342, 58);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(282, 45);
@@ -443,44 +450,42 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Perfil de geração";
             // 
-            // radioButton5
+            // btnPerfC
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(213, 20);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(63, 19);
-            radioButton5.TabIndex = 4;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Perfil C";
-            radioButton5.UseVisualStyleBackColor = true;
+            btnPerfC.AutoSize = true;
+            btnPerfC.Location = new Point(213, 20);
+            btnPerfC.Name = "btnPerfC";
+            btnPerfC.Size = new Size(63, 19);
+            btnPerfC.TabIndex = 4;
+            btnPerfC.Text = "Perfil C";
+            btnPerfC.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // btnPerfB
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(113, 20);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(62, 19);
-            radioButton4.TabIndex = 3;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Perfil B";
-            radioButton4.UseVisualStyleBackColor = true;
+            btnPerfB.AutoSize = true;
+            btnPerfB.Checked = true;
+            btnPerfB.Location = new Point(113, 20);
+            btnPerfB.Name = "btnPerfB";
+            btnPerfB.Size = new Size(62, 19);
+            btnPerfB.TabIndex = 3;
+            btnPerfB.TabStop = true;
+            btnPerfB.Text = "Perfil B";
+            btnPerfB.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // btnPerfA
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Checked = true;
-            radioButton3.Location = new Point(6, 20);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(63, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Perfil A";
-            radioButton3.UseVisualStyleBackColor = true;
+            btnPerfA.AutoSize = true;
+            btnPerfA.Location = new Point(6, 20);
+            btnPerfA.Name = "btnPerfA";
+            btnPerfA.Size = new Size(63, 19);
+            btnPerfA.TabIndex = 2;
+            btnPerfA.Text = "Perfil A";
+            btnPerfA.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(radioButton2);
-            groupBox2.Controls.Add(radioButton1);
+            groupBox2.Controls.Add(ArqSubs);
+            groupBox2.Controls.Add(ArqOrig);
             groupBox2.Location = new Point(6, 58);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(294, 45);
@@ -488,34 +493,34 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Finalidade do arquivo";
             // 
-            // radioButton2
+            // ArqSubs
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(159, 20);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(129, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Arquivo substituido";
-            radioButton2.UseVisualStyleBackColor = true;
+            ArqSubs.AutoSize = true;
+            ArqSubs.Location = new Point(159, 20);
+            ArqSubs.Name = "ArqSubs";
+            ArqSubs.Size = new Size(129, 19);
+            ArqSubs.TabIndex = 1;
+            ArqSubs.TabStop = true;
+            ArqSubs.Text = "Arquivo substituido";
+            ArqSubs.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // ArqOrig
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(6, 20);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(110, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Arquivo original";
-            radioButton1.UseVisualStyleBackColor = true;
+            ArqOrig.AutoSize = true;
+            ArqOrig.Checked = true;
+            ArqOrig.Location = new Point(6, 20);
+            ArqOrig.Name = "ArqOrig";
+            ArqOrig.Size = new Size(110, 19);
+            ArqOrig.TabIndex = 0;
+            ArqOrig.TabStop = true;
+            ArqOrig.Text = "Arquivo original";
+            ArqOrig.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dateTimePicker2);
+            groupBox1.Controls.Add(DataTimeFin);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(DataTimeIni);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(6, 6);
             groupBox1.Name = "groupBox1";
@@ -524,12 +529,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Período";
             // 
-            // dateTimePicker2
+            // DataTimeFin
             // 
-            dateTimePicker2.Location = new Point(360, 15);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(252, 23);
-            dateTimePicker2.TabIndex = 3;
+            DataTimeFin.Location = new Point(360, 15);
+            DataTimeFin.Name = "DataTimeFin";
+            DataTimeFin.Size = new Size(252, 23);
+            DataTimeFin.TabIndex = 3;
+            DataTimeFin.Value = new DateTime(2024, 4, 30, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -540,12 +546,13 @@
             label2.TabIndex = 2;
             label2.Text = "Até:";
             // 
-            // dateTimePicker1
+            // DataTimeIni
             // 
-            dateTimePicker1.Location = new Point(31, 15);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(252, 23);
-            dateTimePicker1.TabIndex = 1;
+            DataTimeIni.Location = new Point(31, 15);
+            DataTimeIni.Name = "DataTimeIni";
+            DataTimeIni.Size = new Size(252, 23);
+            DataTimeIni.TabIndex = 1;
+            DataTimeIni.Value = new DateTime(2024, 4, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -576,6 +583,7 @@
             ClientSize = new Size(663, 588);
             Controls.Add(BtnConfirmar);
             Controls.Add(tabControl1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SpedFiscal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SpedFiscal";
@@ -603,22 +611,14 @@
         private TabControl tabControl1;
         private TabPage tabPage2;
         private GroupBox groupBox1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DataTime;
         private Label label1;
-        private DateTimePicker dateTimePicker2;
         private Label label2;
         private GroupBox groupBox3;
-        private GroupBox groupBox2;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton5;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
         private GroupBox groupBox4;
         private RadioButton radioButton6;
         private RadioButton radioButton7;
         private GroupBox groupBox5;
-        private TextBox textBox1;
         private GroupBox groupBox6;
         private CheckBox checkBox8;
         private CheckBox checkBox9;
@@ -645,5 +645,14 @@
         private Label label5;
         private CheckBox checkBox1;
         private Button BtnConfirmar;
+        public GroupBox groupBox2;
+        public RadioButton ArqSubs;
+        public RadioButton ArqOrig;
+        public TextBox textLeiaute;
+        public RadioButton btnPerfC;
+        public RadioButton btnPerfB;
+        public RadioButton btnPerfA;
+        public DateTimePicker DataTimeIni;
+        public DateTimePicker DataTimeFin;
     }
 }

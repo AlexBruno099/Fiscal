@@ -7,7 +7,7 @@ namespace Fiscal
 {
 
 
-    public partial class Form1 : Form
+    public partial class Fiscal : Form
     {
 
 
@@ -23,7 +23,7 @@ namespace Fiscal
         }
 
 
-        public Form1()
+        public Fiscal()
         {
             InitializeComponent();
         }
