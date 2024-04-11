@@ -21,13 +21,29 @@ namespace Fiscal.Classe
         {
             public DbSet<DadoContabilista> dadoContabilistas { get; set; }
             public DbSet<Emitente> emitente { get; set; }
+            public DbSet<Fornecedor> fornecedor { get; set; }
+            public DbSet<Cliente> cliente { get; set; }
+            public DbSet<Compra> Compra { get; set; }
+            public DbSet<Estoque> Estoque { get; set; }
+            public DbSet<TVendaNFe> TVendaNFe { get; set; }
+            public DbSet<TVendaNFCe> TVendaNFCe { get; set; }
+
+
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 base.OnModelCreating(modelBuilder);
                 new DadoContabilistaEntityTypeConfiguration().Configure(modelBuilder.Entity<DadoContabilista>());
                 new EmitenteEntityTypeConfiguration().Configure(modelBuilder.Entity<Emitente>());
+                new FornecedorEntityTypeConfiguration().Configure(modelBuilder.Entity<Fornecedor>());
+                new ClienteEntityTypeConfiguration().Configure(modelBuilder.Entity<Cliente>());
+                new CompraEntityTypeConfiguration().Configure(modelBuilder.Entity<Compra>());
+                new EstoqueEntityTypeConfiguration().Configure(modelBuilder.Entity<Estoque>());
+                new TVendaNFeEntityTypeConfiguration().Configure(modelBuilder.Entity<TVendaNFe>());
+                new TVendaNFCeEntityTypeConfiguration().Configure(modelBuilder.Entity<TVendaNFCe>());
             }
+
+
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
                 => optionsBuilder.UseFirebird($"DataSource=localhost;Database=C:\\SGBR\\Master\\BD\\BASESGMASTER.FDB;Port=3050;User=SYSDBA;Password=masterkey" +

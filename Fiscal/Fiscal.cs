@@ -1,13 +1,24 @@
-using FirebirdSql.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.IO;
 using System.Runtime.InteropServices;
-
-
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Linq.Expressions;
+using static Fiscal.Classe.DataContext;
+using Fiscal;
+using Fiscal.Properties;
 
 namespace Fiscal
 {
 
 
-    public partial class Form1 : Form
+    public partial class Fiscal : Form
     {
 
 
@@ -23,7 +34,7 @@ namespace Fiscal
         }
 
 
-        public Form1()
+        public Fiscal()
         {
             InitializeComponent();
         }
@@ -45,10 +56,6 @@ namespace Fiscal
             Fiscal.ShowDialog();
         }
 
-        private void BtnConfig_Click(object sender, EventArgs e)
-        {
-            Configurações configurações = new Configurações();
-            configurações.ShowDialog();
-        }
+        
     }
 }

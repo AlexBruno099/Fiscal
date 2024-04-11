@@ -1,5 +1,4 @@
-﻿using Fiscal.Classe;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiscal
+namespace Fiscal.Classe
 {
     public class Emitente
     {
@@ -146,9 +145,9 @@ namespace Fiscal
         public string E3SerieEcf { get; set; }
 
         [DisplayName("E3 Tipo ECF")]
-        
+
         public string E3TipoEcf { get; set; }
-        
+
         [DisplayName("E3 Marca ECF")]
         public string E3MarcaEcf { get; set; }
 
@@ -186,13 +185,13 @@ namespace Fiscal
         public string RegimeTributarioISSQN { get; set; }
 
         [DisplayName("Site")]
-        public string Site {  get; set; }
+        public string Site { get; set; }
 
         [DisplayName("CNPJ Contador")]
         public string CNPJContador { get; set; }
 
         [DisplayName("Versão Servidor")]
-        public int? VersaoServidor {  get; set; }
+        public int? VersaoServidor { get; set; }
 
         [DisplayName("Release Servidor")]
         public int? ReleaseServidor { get; set; }
@@ -201,7 +200,7 @@ namespace Fiscal
         public string ChavePP { get; set; }
 
         [DisplayName("Controle SG")]
-        public string ControleSG { get; set;}
+        public string ControleSG { get; set; }
 
         [DisplayName("MD5 PAF")]
         public string MD5PAF { get; set; }
@@ -237,7 +236,7 @@ namespace Fiscal
         public string AtualizarDataVendaCompra { get; set; }
 
         [DisplayName("Reservar Produto Aluguel Condi")]
-        public string ReservarProdutoAluguelCondi {  get; set; }
+        public string ReservarProdutoAluguelCondi { get; set; }
 
         [DisplayName("Atualizar Estoque Parcial")]
         public string AtualizarEstoqueParcial { get; set; }
@@ -255,7 +254,7 @@ namespace Fiscal
         public string NumAutFuncionamento { get; set; }
 
         [DisplayName("MD5I")]
-        public string MD5I {  get; set; }
+        public string MD5I { get; set; }
 
         [DisplayName("Sincronizado")]
         public string Sincronizado { get; set; }
