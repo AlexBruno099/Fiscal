@@ -553,6 +553,7 @@
             DataTimeIni.Size = new Size(252, 23);
             DataTimeIni.TabIndex = 1;
             DataTimeIni.Value = new DateTime(2024, 4, 1, 0, 0, 0, 0);
+            DataTimeIni.ValueChanged += DataTimeIni_ValueChanged;
             // 
             // label1
             // 

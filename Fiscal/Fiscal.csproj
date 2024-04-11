@@ -9,24 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\background.png" />
-    <None Remove="Resources\Contribuições.png" />
-    <None Remove="Resources\LCDPR.png" />
-    <None Remove="Resources\sintegra.PNG" />
-    <None Remove="Resources\sped contribuiçoes.PNG" />
-    <None Remove="Resources\sped fiscal.PNG" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\background.png" />
-    <EmbeddedResource Include="Resources\Contribuições.png" />
-    <EmbeddedResource Include="Resources\LCDPR.png" />
-    <EmbeddedResource Include="Resources\sintegra.PNG" />
-    <EmbeddedResource Include="Resources\sped contribuiçoes.PNG" />
-    <EmbeddedResource Include="Resources\sped fiscal.PNG" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FirebirdSql.EntityFrameworkCore.Firebird" Version="10.0.0" />
   </ItemGroup>
 
@@ -40,7 +22,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

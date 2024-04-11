@@ -51,7 +51,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.sintegra;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(13, 31);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(106, 106);
@@ -61,7 +61,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.sped_fiscal;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(164, 31);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(106, 106);
@@ -72,7 +72,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.Contribuições;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(327, 31);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(106, 106);
@@ -82,7 +82,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackgroundImage = Properties.Resources.background;
+            groupBox1.BackgroundImage = (Image)resources.GetObject("groupBox1.BackgroundImage");
             groupBox1.Controls.Add(pictureBox4);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(pictureBox3);
@@ -97,7 +97,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.LCDPR;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(480, 31);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(106, 106);
@@ -107,7 +107,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.BackgroundImage = Properties.Resources.background;
+            groupBox2.BackgroundImage = (Image)resources.GetObject("groupBox2.BackgroundImage");
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(panel2);
             groupBox2.Controls.Add(panel1);
@@ -122,6 +122,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Control;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(523, 58);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
@@ -168,7 +169,6 @@
             BtnConfig.TabIndex = 6;
             BtnConfig.Text = "Configurações";
             BtnConfig.UseVisualStyleBackColor = false;
-            BtnConfig.Click += BtnConfig_Click;
             // 
             // button3
             // 
@@ -183,19 +183,22 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
-            // Form1
+            // Fiscal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.background;
+            AutoSize = true;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(642, 379);
             Controls.Add(button3);
             Controls.Add(BtnConfig);
             Controls.Add(BtnContabilista);
             Controls.Add(groupBox1);
+            ForeColor = Color.White;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
+            MaximizeBox = false;
+            Name = "Fiscal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Fiscal";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

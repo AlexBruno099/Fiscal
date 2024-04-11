@@ -1,5 +1,4 @@
-﻿using Fiscal.Classe;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System;
@@ -9,12 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiscal
+namespace Fiscal.Classe
 {
     public class Registro000
     {
         public SpedFiscal spedFiscal;
-        public void BlocosSped()
+
+        public SpedFiscal GetSpedFiscal()
+        {
+            return spedFiscal;
+        }
+
+        public void BlocosSped(SpedFiscal spedFiscal)
         {
 
             using (var context = new DataContext.Contexto())
@@ -35,17 +40,17 @@ namespace Fiscal
                 var DadosEmit = emit.AsQueryable().First();
                 var DadosForn = fornecedor.AsQueryable().FirstOrDefault();
                 var DadosCli = cliente.AsQueryable().FirstOrDefault();
-                var compras = compra.ToList().Where(comp => (comp.DataRecebimento >= dataInicial && comp.DataRecebimento <= dataFinal));
+                var compras = compra.ToList().Where(comp => comp.DataRecebimento >= dataInicial && comp.DataRecebimento <= dataFinal);
                 var DadosEst = estoque.ToList();
-                var DadosVendNfc = tvendaNfce.ToList().Where(vendnfce => (vendnfce.DataEmissao >= dataInicial && vendnfce.DataEmissao <= dataFinal));
-                var DadosVendaNF = tvendaNFe.ToList().Where(vendnfe => (vendnfe.DataEmissao >= dataInicial && vendnfe.DataEmissao <= dataFinal));
+                var DadosVendNfc = tvendaNfce.ToList().Where(vendnfce => vendnfce.DataEmissao >= dataInicial && vendnfce.DataEmissao <= dataFinal);
+                var DadosVendaNF = tvendaNFe.ToList().Where(vendnfe => vendnfe.DataEmissao >= dataInicial && vendnfe.DataEmissao <= dataFinal);
 
                 string CNPJSemMascEmit = DadosEmit.CNPJ.Replace(".", "").Replace("/", "").Replace("-", "");
-                string TelefoneSemMascEmit = DadosEmit.Telefone.Replace(".", "").Replace("/", "").Replace("-", "");
-                string FaxSemMascEmit = DadosEmit.FAX.Replace(".", "").Replace("/", "").Replace("-", "");
+                string TelefoneSemMascEmit = DadosEmit.Telefone.Replace(".", "").Replace("/", "").Replace("-", "").Replace("(", "").Replace(")", "");
+                string FaxSemMascEmit = DadosEmit.FAX.Replace(".", "").Replace("/", "").Replace("-", "").Replace("(", "").Replace(")", "");
                 string TelefoneSemMasc = DadosCont.Telefone.Replace(".", "").Replace("/", "").Replace("-", "");
                 string CNPJSemMascClie = DadosCli.CNPJ.Replace(".", "").Replace("/", "").Replace("-", "");
-                
+
 
                 #region 0000
 
@@ -63,7 +68,7 @@ namespace Fiscal
                 {
                     registro00 += "1" + "|";
                 }
-                registro00 += dataInicial + "|" + dataFinal + "|";
+                registro00 += dataInicial.ToString("ddMMyyyy") + "|" + dataFinal.ToString("ddMMyyyy") + "|";
                 registro00 += DadosEmit.RazaoSocial + "|";
                 registro00 += CNPJSemMascEmit + "|";
                 registro00 += DadosEmit.UF + "|";
@@ -337,17 +342,24 @@ namespace Fiscal
                     string caminhoArquivo = saveFileDialog1.FileName;
                     try
                     {
-
                         File.WriteAllText(caminhoArquivo, registro00);
-
                         MessageBox.Show("SPED gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        DialogResult resultado = MessageBox.Show("Deseja abrir o local do arquivo?", "Abrir Arquivo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                            {
+                                FileName = caminhoArquivo,
+                                UseShellExecute = true
+                            });
+                        }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Ocorreu um erro ao gerar o arquivo SPED:" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+
                 #endregion 
 
             }

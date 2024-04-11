@@ -303,7 +303,7 @@ namespace Fiscal.Classe
 
             builder.HasKey(e => e.Controle);
 
-            builder.Property(e => e.Controle).HasColumnName("CONTROLE");
+            builder.Property(e => e.Controle).HasColumnName("CONTROLE").IsRequired(); ;
 
             builder.Property(e => e.NomeCliente).HasColumnName("CLIENTE");
 
